@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Vaishnavi 💖</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            margin-top: 100px;
+        }
+
+        h1 {
+            font-size: 45px;
+            color: white;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 22px;
+            margin: 20px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #yesBtn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Vaishnavi Kapoor 💕</h1>
+    <h2>Will you be my Valentine, from Dhruv Raghav? 😌💖</h2>
+
+    <button id="yesBtn" onclick="yesClicked()">Yes 💖</button>
+    <button id="noBtn" onclick="noClicked()">No 😢</button>
+
+    <script>
+        let noSize = 1;
+        let yesSize = 1;
+        let noClicks = 0;
+
+        function yesClicked() {
+            document.body.innerHTML = `
+                <h1 style='color:white;'>YAYYYYYY VAISHNAVI 😍💖</h1>
+                <h2>You just made Dhruv the happiest person alive 🥰</h2>
+                <h2>See you on our Valentine’s Date 💕✨</h2>
+            `;
+        }
+
+        function noClicked() {
+            noClicks++;
+
+            noSize -= 0.2;
+            yesSize += 0.25;
+
+            document.getElementById("noBtn").style.transform = "scale(" + noSize + ")";
+            document.getElementById("yesBtn").style.transform = "scale(" + yesSize + ")";
+
+            if (noClicks >= 5) {
+                document.getElementById("noBtn").style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
